@@ -1,2 +1,1 @@
-# payflow-config
-Centralized configuration repository for PayFlow microservices
+Centralized configuration repository for PayFlow FinTech microservices.
