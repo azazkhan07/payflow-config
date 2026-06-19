@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payment_test_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 7086
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

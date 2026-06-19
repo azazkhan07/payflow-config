@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: wallet-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app:
+    name: "Wallet Service"
+    description: "Wallet Management Service"
+    version: "1.0"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost

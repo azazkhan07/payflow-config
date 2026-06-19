@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: auth-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app:
+    name: "Auth Service"
+    description: "Authentication and Authorization Service"
+    version: "1.0"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+jwt:
+  access:
+    expiration: 86400000
+
+  refresh:
+    expiration: 604800000
+  secret: ${JWT_SECRET}

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: payment-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app:
+    name: "Payment Service"
+    description: "Payment Processing Service"
+    version: "1.0"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost

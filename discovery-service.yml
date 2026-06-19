@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: discovery-service
+
+info:
+  app:
+    name: "Discovery Service"
+    description: "Eureka Service Registry"
+    version: "1.0"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
