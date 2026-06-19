@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://user-db-prod:5432/payflow_user
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: 8083
