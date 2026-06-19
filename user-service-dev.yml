@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/payflow_user
     username: postgres
-    password: postgres
+    password: "{cipher}de7610917a8ff92738acd59b28b3d3e5bd6e41441f8baa00bd9cf36c013ad51b"
     driver-class-name: org.postgresql.Driver
 
     hikari:
