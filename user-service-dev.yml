@@ -11,7 +11,7 @@ spring:
       idle-timeout: 30000
       connection-timeout: 20000
       pool-name: UserServicePool
-
+  
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
