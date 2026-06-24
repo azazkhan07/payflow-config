@@ -42,7 +42,7 @@ management:
 info:
   app:
     name: "User Service"
-    description: "User Management Service"
+    description: "User Management Service Under Development"
     version: "1.0"
 
 
