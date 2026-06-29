@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    bootstrap-servers: localhost:9092
 
     consumer:
       group-id: notification-group
@@ -13,7 +13,13 @@ spring:
         spring:
           json:
             trusted:
-              packages: "com.novapay.*"
+              packages: "*"
+            use:
+              type:
+                headers: false
+            value:
+              default:
+                type: com.novapay.notification_service.event.payment.PaymentCompletedEvent    
   datasource:
     url: jdbc:postgresql://localhost:5432/notification_db
     username: ${DB_USERNAME}
