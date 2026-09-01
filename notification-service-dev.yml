@@ -8,6 +8,7 @@ spring:
 
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+     
 
       properties:
         spring:
@@ -20,6 +21,10 @@ spring:
             value:
               default:
                 type: com.novapay.notification_service.event.payment.PaymentCompletedEvent
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            
   mail:
     host: ${MAIL_HOST}
     port: ${MAIL_PORT:587}
