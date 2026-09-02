@@ -15,9 +15,7 @@ spring:
           json:
             trusted:
               packages: "*"
-            use:
-              type:
-                headers: true
+           
            
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
