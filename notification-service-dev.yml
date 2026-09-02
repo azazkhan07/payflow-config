@@ -17,10 +17,8 @@ spring:
               packages: "*"
             use:
               type:
-                headers: false
-            value:
-              default:
-                type: com.novapay.notification_service.event.payment.PaymentCompletedEvent
+                headers: true
+           
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
