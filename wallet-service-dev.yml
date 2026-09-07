@@ -7,6 +7,9 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: true
+        spring.json.type.mapping: >
+          walletDebitedEvent:com.novapay.wallet_service.saga.event.WalletDebitedEvent,
+          walletRefundedEvent:com.novapay.wallet_service.saga.event.WalletRefundedEvent
 
     consumer:
       group-id: wallet-saga-group
