@@ -7,6 +7,9 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: true
+        spring.json.type.mapping: >
+          transactionCreatedEvent:com.novapay.transaction_service.saga.event.TransactionCreatedEvent,
+          transactionFailedEvent:com.novapay.transaction_service.saga.event.TransactionFailedEvent
 
     consumer:
       group-id: transaction-saga-group
