@@ -18,7 +18,12 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: com.novapay.payment_service    
+        spring.json.trusted.packages: com.novapay.payment_service
+        spring.json.type.mapping: >
+          walletDebitedEvent:com.novapay.payment_service.saga.event.WalletDebitedEvent,
+          walletRefundedEvent:com.novapay.payment_service.saga.event.WalletRefundedEvent,
+          transactionCreatedEvent:com.novapay.payment_service.saga.event.TransactionCreatedEvent,
+          transactionFailedEvent:com.novapay.payment_service.saga.event.TransactionFailedEvent
 
   datasource:
     url: jdbc:postgresql://localhost:5432/payment_db
