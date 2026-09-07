@@ -7,6 +7,11 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: true
+        spring.json.type.mapping: >
+          debitWalletCommand:com.novapay.payment_service.saga.event.DebitWalletCommand,
+          createTransactionCommand:com.novapay.payment_service.saga.event.CreateTransactionCommand,
+          walletRefundCommand:com.novapay.payment_service.saga.event.WalletRefundCommand
+        
     consumer:
       group-id: payment-saga-group
       auto-offset-reset: earliest
