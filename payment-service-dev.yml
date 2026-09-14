@@ -55,7 +55,8 @@ resilience4j:
     instances:
       transactionService:
         max-attempts: 3
-        wait-duration: 1s      
+        wait-duration: 1s
+        
 server:
   port: 8086
 
