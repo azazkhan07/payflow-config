@@ -5,7 +5,7 @@ spring:
         config:
           transaction-service:
             connectTimeout: 2000
-            readTimeout: 3000
+            readTimeout: 5000
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
