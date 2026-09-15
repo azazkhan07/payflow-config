@@ -64,6 +64,13 @@ resilience4j:
         max-attempts: 3
         wait-duration: 1s
         
+  ratelimiter:
+    instances:
+      transactionService:
+        limit-for-period: 5
+        limit-refresh-period: 1s
+        timeout-duration: 0s      
+        
 server:
   port: 8086
 
