@@ -75,7 +75,10 @@ resilience4j:
     instances:
       transactionService:
         max-concurrent-calls: 2
-        max-wait-duration: 0s      
+        max-wait-duration: 0s
+      bulkheadTest:
+        max-concurrent-calls: 2
+        max-wait-duration: 0s    
         
 server:
   port: 8086
