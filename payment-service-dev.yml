@@ -69,7 +69,13 @@ resilience4j:
       transactionService:
         limit-for-period: 5
         limit-refresh-period: 1s
-        timeout-duration: 0s      
+        timeout-duration: 0s
+        
+  bulkhead:
+    instances:
+      transactionService:
+        max-concurrent-calls: 5
+        max-wait-duration: 0s      
         
 server:
   port: 8086
