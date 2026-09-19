@@ -33,7 +33,7 @@ spring:
               predicates:
                 - Path=/wallets/**
               filters:
-                - RewritePath=/wallets/?(?<remaining>.*), /$\{remaining}
+                - RewritePath=/wallets/?(?<remaining>.*), /api/v1/wallets/$\{remaining}
 
             - id: transaction-service
               uri: lb://TRANSACTION-SERVICE
