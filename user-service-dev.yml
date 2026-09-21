@@ -38,6 +38,10 @@ management:
   info:
     env:
       enabled: true
+      
+internal:
+  service:
+    secret: ${INTERNAL_SERVICE_SECRET}      
 
 info:
   app:
