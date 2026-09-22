@@ -47,6 +47,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+razorpay:
+  key-id: ${RAZORPAY_KEY_ID}
+  key-secret: ${RAZORPAY_KEY_SECRET}        
 
 resilience4j:
   circuitbreaker:
