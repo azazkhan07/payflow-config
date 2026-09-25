@@ -17,7 +17,7 @@ spring:
             - id: payment-service
               uri: lb://PAYMENT-SERVICE
               predicates:
-                - Path=/payments/**
+                - Path=/api/v1/payments/**
               filters:
                 - RewritePath=/payments/?(?<remaining>.*), /$\{remaining}
 
