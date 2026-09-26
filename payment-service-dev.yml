@@ -49,7 +49,8 @@ spring:
         format_sql: true
 razorpay:
   key-id: ${RAZORPAY_KEY_ID}
-  key-secret: ${RAZORPAY_KEY_SECRET}        
+  key-secret: ${RAZORPAY_KEY_SECRET}
+  webhook-secret: ${RAZORPAY_WEBHOOK_SECRET}
 
 resilience4j:
   circuitbreaker:
