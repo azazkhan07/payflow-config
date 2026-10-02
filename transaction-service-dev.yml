@@ -33,58 +33,6 @@ spring:
 
 server:
   port: 8085
-  
-spring:
-  kafka:
-    bootstrap-servers: localhost:9092
-
-    consumer:
-      group-id: notification-group
-      auto-offset-reset: earliest
-
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-     
-
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: "*"
-           
-           
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-            
-  mail:
-    host: ${MAIL_HOST}
-    port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true                
-  datasource:
-    url: jdbc:postgresql://localhost:5432/notification_db
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-    driver-class-name: org.postgresql.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-    properties:
-      hibernate:
-        format_sql: true
-
-server:
-  port: 8087
 
 management:
   tracing:
@@ -96,12 +44,8 @@ management:
       export:
         otlp:
           endpoint: http://localhost:4318/v1/traces
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
 
-
+  
 eureka:
   client:
     service-url:
