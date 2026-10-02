@@ -81,6 +81,15 @@ resilience4j:
         max-concurrent-calls: 2
         max-wait-duration: 0s
         
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces        
+        
 server:
   port: 8086
 
