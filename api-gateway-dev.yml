@@ -56,7 +56,7 @@ spring:
                 - RewritePath=/auth/?(?<remaining>.*), /api/v1/auth/$\{remaining}
   data:
     redis:
-      host: localhost
+      host: ${REDIS_HOST:localhost}
       port: 6379
 jwt:
   secret: ${JWT_SECRET}
@@ -64,11 +64,11 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone:  ${EUREKA_URL:http://localhost:8761/eureka/}
 
   instance:
     prefer-ip-address: true
-    hostname: localhost
+    
 
 management:
   endpoint:
@@ -90,7 +90,7 @@ management:
 
   otlp:
     tracing:
-      endpoint: http://localhost:4318/v1/traces          
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318/v1/traces}      
 info:
   app:
     name: "API Gateway"
