@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/payflow_user
-    username: postgres
-    password: "{cipher}de7610917a8ff92738acd59b28b3d3e5bd6e41441f8baa00bd9cf36c013ad51b"
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/payflow_user}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
     hikari:
@@ -13,10 +13,10 @@ spring:
       pool-name: UserServicePool
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -45,7 +45,7 @@ management:
 
   otlp:
     tracing:
-      endpoint: http://localhost:4318/v1/traces    
+      endpoint: ${MANAGEMENT_OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
       
 internal:
   service:
@@ -61,4 +61,4 @@ info:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
