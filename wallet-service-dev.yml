@@ -23,7 +23,7 @@ spring:
           walletRefundCommand:com.novapay.wallet_service.saga.event.WalletRefundCommand
           
   datasource:
-    url: jdbc:postgresql://localhost:5432/wallet_db
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/wallet_db}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver  
@@ -35,8 +35,8 @@ spring:
     
   data:
     redis:
-      host: localhost
-      port: 6379
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
   cache:
     type: redis
 jwt:
@@ -56,9 +56,10 @@ management:
 
   otlp:
     tracing:
-      endpoint: http://localhost:4318/v1/traces  
+      endpoint: ${MANAGEMENT_OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
+
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
