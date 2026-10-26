@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/payflow_user}
-    username: ${DB_USERNAME:postgres}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/payflow_user}
+    username: ${DB_USERNAME:payflow_app}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
@@ -45,7 +45,7 @@ management:
 
   otlp:
     tracing:
-      endpoint: ${MANAGEMENT_OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
+      endpoint: ${MANAGEMENT_OTLP_TRACING_ENDPOINT:http://jaeger:4318/v1/traces}
       
 internal:
   service:
@@ -61,4 +61,4 @@ info:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://discovery-service:8761/eureka/}
